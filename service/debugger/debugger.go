@@ -1105,7 +1105,7 @@ func regexFilterFuncs(filter string, allFuncs []proc.Function) ([]string, error)
 
 	funcs := []string{}
 	for _, f := range allFuncs {
-		if regex.Match([]byte(f.Name)) {
+		if regex.MatchString(f.Name) {
 			funcs = append(funcs, f.Name)
 		}
 	}
